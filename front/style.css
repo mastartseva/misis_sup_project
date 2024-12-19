@@ -125,3 +125,10 @@ main {
     flex-direction: row;
     gap: 300px;
 }
+
+.starting-line {
+    display: flex;
+    position: absolute;
+    margin: auto;
+    top: 60px;
+}
