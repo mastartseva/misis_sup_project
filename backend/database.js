@@ -1,3 +1,3 @@
 module.exports = {
-    url: 'mongodb://localhost:27017/Cookit'
+    url: 'mongodb+srv://stagulmovir1:iduUSEHVaNVF1AV6@cookit.3qrvi.mongodb.net/'
 }
