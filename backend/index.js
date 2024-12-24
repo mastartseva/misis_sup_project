@@ -3,6 +3,7 @@ const cors = require('cors');
 const { MongoClient } = require('mongodb');
 const db = require('./database');
 const recipeRoutes = require('./routes/recipeRoutes');
+const productRouter = require('./routes/productRouter');
 
 const app = express();
 const PORT = 5000;
@@ -25,6 +26,7 @@ async function main() {
 
         // Здесь пути для API
         app.use('/api/v1/recipes', recipeRoutes(client.db()));
+        app.use('/api/v1/products', productRouter(client.db()));
 
         app.listen(PORT, () => {
             console.log(`Server is running on port ${PORT}`)
