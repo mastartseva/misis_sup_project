@@ -7,8 +7,8 @@ const recipeRoutes = (db) => {
 
     router.get('/', async (req, res) => {
         try {
-            const users = await collection.find({}).toArray();
-            res.status(200).json(users);
+            const recipes = await collection.find({}).toArray();
+            res.status(200).json(recipes);
         } catch (error) {
             res.status(500).json({ error: error.message });
         };
@@ -30,7 +30,7 @@ const recipeRoutes = (db) => {
     router.post('/', async (req, res) => {
         try {
             const result = await collection.insertOne(req.body);
-            res.status(201).json(result.ops[0]);
+            res.status(201).json({ insertedId: result.insertedId });
         } catch (error) {
             res.status(500).json({ error: error.message });
         };
