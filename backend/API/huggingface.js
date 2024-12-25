@@ -23,4 +23,24 @@ async function getProductsByPhoto(file) {
     }
 }
 
-module.exports = getProductsByPhoto;
+async function getEmbedding(text) {
+    const response = await fetch(
+        "https://api-inference.huggingface.co/models/sentence-transformers/all-MiniLM-L6-v2",
+        {
+            headers: {
+                Authorization: "Bearer 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",
+                "Content-Type": "application/json"
+            },
+            method: "POST",
+            body: JSON.stringify({ inputs: text }),
+        });
+
+    if (!response.ok) {
+        throw new Error(`Ошибка API Hugging Face: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data;
+}
+
+module.exports = { getProductsByPhoto, getEmbedding };
