@@ -22,7 +22,8 @@ const photoRecipeRouter = (db) => {
             const availableProducts = await getProductsByPhoto(fileBuffer);
             const all_recipes = await collection.find({}).toArray();
 
-            result = rankRecipes(availableProducts, all_recipes);
+            result = await rankRecipes(availableProducts, all_recipes);
+            console.log(result);
     
             res.status(200).json(result);
         } catch (error) {
