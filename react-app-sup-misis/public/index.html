@@ -7,33 +7,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <a href="#" class="nav-link">Меню</a>
-            <a href="#" class="nav-link">Тематические ужины</a>
-            <h1 class="logo">Cookit</h1>
-            <a href="#" class="nav-link">Вегетарианцам</a>
-            <a href="#" class="nav-link">Быстрые рецепты</a>
-        </nav>
-    </header>
+    <div id="root">
 
-    <main>
-        <div class="starting-line">
-            <h1>Загрузите фотографию продуктов чтобы получить рецепт</h1>
-        </div>
-        <div class="upload-container">
-            <label for="file-input" class="upload-button">
-                Загрузить фото
-            </label>
-            <div class="img-text-box">
-                <input type="file" id="file-input" accept="image/*" hidden>
-                <img class="uploaded-image" id="uploaded-image" src="#" alt="Загруженное изображение" style="display: none;">
-                <div id="text-box" class="text-box"></div>
+        <header>
+            <nav class="navbar">
+                <a href="#" class="nav-link">Меню</a>
+                <a href="#" class="nav-link">Тематические ужины</a>
+                <h1 class="logo">Cookit</h1>
+                <a href="#" class="nav-link">Вегетарианцам</a>
+                <a href="#" class="nav-link">Быстрые рецепты</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="starting-line">
+                <h1>Загрузите фотографию продуктов чтобы получить рецепт</h1>
             </div>
-        </div>
-        
-    </main>
-
-    <script src="script.js"></script>
+            <div class="upload-container">
+                <label for="file-input" class="upload-button">
+                    Загрузить фото
+                </label>
+                <div class="img-text-box">
+                    <input type="file" id="file-input" accept="image/*" hidden>
+                    <img class="uploaded-image" id="uploaded-image" src="#" alt="Загруженное изображение" style="display: none;">
+                    <div id="text-box" class="text-box" style="display: none;"></div>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+    <script src="App.js"></script>
 </body>
 </html>
