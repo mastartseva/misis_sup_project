@@ -36,8 +36,8 @@ async function main() {
         // Здесь пути для API
         app.use('/api/v1/recipes', recipeRoutes(database));
         app.use('/api/v1/products', photoRecipeRouter(database));
-        app.use('/api/v1/weighted-trie', weightedTrieRouter(driver));
-        app.use('/api/v1/cacheMemmory', cacheRouter());
+        app.use('/api/v1/weighted-trie', weightedTrieRouter(driver)); // Поиск по релевантности
+        app.use('/api/v1/cacheMemmory', cacheRouter()); // Кжширование запросов
 
         app.listen(PORT, () => {
             console.log(`Server is running on port ${PORT}`)

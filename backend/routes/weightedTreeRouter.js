@@ -67,6 +67,9 @@ const weightedTrieRouter = (driver) => {
      *       200:
      *         description: Информация о слове
      */
+
+
+    // Роутер для поиска слова
     router.get('/words/:word', async (req, res) => {
         try {
             const { word } = req.params;
@@ -97,6 +100,8 @@ const weightedTrieRouter = (driver) => {
      *       200:
      *         description: Список слов
      */
+
+    // Возвращает все слова
     router.get('/words', async (req, res) => {
         try {
             const { prefix } = req.query;
